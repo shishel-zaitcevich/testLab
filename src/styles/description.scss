@@ -1,0 +1,23 @@
+@import './mixins.scss';
+@import './variables.scss';
+@import './utils.scss';
+
+.description__block {
+  @include flex;
+  flex-wrap: wrap;
+  //   padding-bottom: useRem(67);
+  gap: useRem(32);
+}
+
+.description {
+  min-width: useRem(592);
+  max-width: useRem(592);
+  width: 100%;
+  height: useRem(245);
+  .description__text {
+    color: $text_dark_color;
+    font-size: useRem(16);
+    line-height: useRem(28);
+    margin-top: useRem(17);
+  }
+}
