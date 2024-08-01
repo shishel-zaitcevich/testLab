@@ -1,0 +1,17 @@
+export interface howItWorksType{
+    title: string;
+    text: string;
+    img: string;
+}
+  
+  export interface SliderProps {
+    sliderData: SlideData[]
+    isMobileScreen: boolean
+  }
+
+export interface SlideData{
+    avatar: string;
+    name: string;
+    city: string;
+    message: string;
+}

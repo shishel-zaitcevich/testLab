@@ -1,0 +1,25 @@
+@import './mixins.scss';
+@import './variables.scss';
+@import './utils.scss';
+
+.third-block {
+  @include flex;
+  padding-bottom: useRem(80);
+  .third-block__content {
+    max-width: useRem(592);
+    width: 100%;
+    height: useRem(140);
+    @include flex_column;
+    .third__title {
+      font-size: useRem(32);
+      text-align: start;
+      margin-left: useRem(-30);
+      margin-bottom: useRem(18);
+    }
+    .third-block__text {
+      color: $color_grey;
+      font-size: useRem(16);
+      line-height: useRem(28);
+    }
+  }
+}

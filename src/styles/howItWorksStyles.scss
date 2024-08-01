@@ -1,0 +1,32 @@
+@import './mixins.scss';
+@import './variables.scss';
+@import './utils.scss';
+
+.recommendations {
+  @include flex;
+  max-width: useRem(1216);
+  width: 100%;
+  .content_block {
+    @include flex_column;
+    align-items: flex-start;
+    max-width: useRem(250);
+    width: 100%;
+    margin-top: useRem(61);
+    .icons {
+      max-width: useRem(72);
+      width: 100%;
+      height: useRem(72);
+      margin-bottom: useRem(16);
+    }
+    .recommendations__title {
+      color: $text_dark_color;
+      font-size: useRem(16);
+      margin-bottom: useRem(4);
+    }
+    .recommendations__text {
+      color: $color_grey;
+      font-size: useRem(14);
+      line-height: useRem(24);
+    }
+  }
+}

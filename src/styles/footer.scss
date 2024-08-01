@@ -1,0 +1,11 @@
+@import './mixins.scss';
+@import './variables.scss';
+@import './utils.scss';
+@import './mixins.scss';
+
+.footer {
+  font-size: useRem(18);
+  @include flex;
+  justify-content: center;
+  min-height: useRem(88);
+}

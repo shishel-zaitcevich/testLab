@@ -1,0 +1,99 @@
+@import './mixins.scss';
+@import './variables.scss';
+@import './utils.scss';
+
+.block__feedback {
+  @include flex;
+  padding-bottom: useRem(50);
+}
+
+.swiper {
+  margin-top: useRem(32);
+  max-width: useRem(1087);
+  width: 100%;
+  .slide {
+    @include flex_column;
+    max-width: useRem(341);
+    width: 100%;
+    height: useRem(316);
+    background-color: $color_white;
+    padding: useRem(22);
+    border-radius: useRem(8);
+    .user {
+      @include flex;
+      justify-content: flex-start;
+      width: 100%;
+      .avatar {
+        margin-right: useRem(16);
+      }
+      .info {
+        @include flex_column;
+        align-items: flex-start;
+        width: 100%;
+        .name {
+          color: $text_dark_color;
+          font-size: useRem(16);
+          font-weight: 600;
+          line-height: useRem(24);
+          padding-bottom: useRem(4);
+        }
+        .city {
+          color: $color_grey;
+          font-size: useRem(12);
+          margin-bottom: useRem(20);
+        }
+      }
+      .message {
+        color: $text_dark_color;
+        font-size: useRem(14);
+        line-height: useRem(24);
+      }
+    }
+  }
+}
+.button-prev {
+  background-image: url(../assets/images/arrow_right.png);
+  rotate: 180deg;
+  width: useRem(17);
+  height: useRem(32);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button-prev:disabled {
+  background-image: url(../assets/images/Vector.png);
+  rotate: none;
+}
+
+.button-next {
+  background-image: url(../assets/images/arrow_right.png);
+  width: useRem(17);
+  height: useRem(32);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button-next:disabled {
+  background-image: url(../assets/images/Vector.png);
+  rotate: 180deg;
+}
+
+.swiper-pagination-bullet {
+  width: useRem(8);
+  height: useRem(8);
+  margin: 0 useRem(5);
+  background-color: $color_pagination;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: $color_blue;
+}
+
+.swiper-pagination {
+  position: relative;
+}

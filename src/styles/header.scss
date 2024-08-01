@@ -1,0 +1,82 @@
+@import './mixins.scss';
+@import './variables.scss';
+@import './utils.scss';
+
+.header {
+  @include flex_column;
+  align-items: flex-start;
+  background-image: url(../assets/images/header_bgi.png);
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  max-width: useRem(1920);
+  min-width: useRem(320);
+  width: 100%;
+  height: useRem(960);
+  .header__nav {
+    max-width: useRem(1213);
+    width: 100%;
+    height: useRem(80);
+    @include flex;
+    margin: 0 auto;
+    .nav {
+      max-width: useRem(464);
+      width: 100%;
+      @include flex;
+      .link {
+        color: $color_white;
+        cursor: pointer;
+        position: relative;
+        text-decoration: none;
+      }
+      .link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background: currentColor;
+        transition: transform 0.2s ease-in-out;
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+
+      .link:hover::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+  .header__content {
+    max-width: useRem(748);
+    width: 100%;
+    height: useRem(334);
+    margin: 0 auto;
+    @include flex_column;
+    color: $color_white;
+    margin-top: useRem(219);
+    .title {
+      text-align: center;
+      margin-bottom: useRem(18);
+      font-size: useRem(52);
+    }
+    .header__text {
+      margin-bottom: useRem(92);
+      font-size: useRem(18);
+    }
+    .header__button {
+      width: useRem(251);
+      height: useRem(64);
+      background-color: $button_color;
+      color: $text_dark_color;
+      font-weight: 600;
+      font-size: useRem(20);
+      border-radius: useRem(4);
+      border: none;
+      cursor: pointer;
+    }
+    .header__button:hover {
+      background-color: $color_blue;
+      color: $color_white;
+    }
+  }
+}

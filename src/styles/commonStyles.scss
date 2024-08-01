@@ -1,0 +1,41 @@
+@import './mixins.scss';
+@import './variables.scss';
+@import './utils.scss';
+
+.wrapper {
+  max-width: useRem(1920);
+  min-width: useRem(320);
+  margin: 0 auto;
+  @include flex;
+  @media only screen and (min-width: 769px) and (max-width: 1200px) {
+    // padding: 0 useRem(20);
+    // padding-top: useRem(40);
+    // max-width: useRem(900);
+    // min-width: useRem(700);
+    // width: 100%;
+  }
+  @media only screen and (min-width: 319px) and (max-width: 768px) {
+    // padding: useRem(0) useRem(20);
+    // padding-bottom: useRem(0);
+    // max-width: useRem(700);
+    // width: 100%;
+  }
+}
+
+.block {
+  max-width: useRem(1216);
+  width: 100%;
+  margin: 0 auto;
+  padding-top: useRem(80);
+}
+
+.block__title {
+  text-align: center;
+  font-size: useRem(40);
+  color: $text_dark_color;
+}
+
+.grey__bgc {
+  background-color: $bgc;
+  padding-bottom: useRem(45);
+}
