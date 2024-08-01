@@ -15,3 +15,12 @@ export interface SlideData{
     city: string;
     message: string;
 }
+
+export interface QuestionsAndAnswersType {
+  title: string;
+  text: string;
+}
+
+export interface AccordionUsageProps {
+  data: QuestionsAndAnswersType[];
+}

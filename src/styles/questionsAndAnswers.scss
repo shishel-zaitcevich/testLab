@@ -1,0 +1,35 @@
+@import './mixins.scss';
+@import './variables.scss';
+@import './utils.scss';
+
+.questions__block {
+  max-width: useRem(1008);
+  width: 100%;
+  padding-bottom: useRem(80);
+  .questions__title {
+    margin-bottom: useRem(66);
+  }
+}
+
+.accordion-summary {
+  color: $text_dark_color;
+  font-weight: 600;
+  font-size: useRem(18);
+  &:hover {
+    color: $color_blue; /* цвет фона при наведении */
+  }
+}
+
+.accordion__text {
+  color: $color_grey;
+  font-size: useRem(18);
+  line-height: useRem(32);
+}
+
+.accordion-icon {
+  transition: transform 0.3s;
+}
+
+.MuiAccordionSummary-expandIconWrapper.Mui-expanded .accordion-icon {
+  transform: rotate(45deg);
+}
