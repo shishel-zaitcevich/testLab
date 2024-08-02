@@ -7,6 +7,7 @@ import QuestionsAndAnswers from './Q&A/QuestionsAndAnswers'
 import { questionsData } from './Q&A/QuestionsData'
 import { Description } from './description/Description'
 import { descriptionData } from './description/descriptionData'
+import Form from './form/Form'
 
 export function MainPage() {
   return (
@@ -16,6 +17,7 @@ export function MainPage() {
       <Feedback />
       <QuestionsAndAnswers data={questionsData} />
       <Description data={descriptionData} />
+      <Form />
     </>
   )
 }

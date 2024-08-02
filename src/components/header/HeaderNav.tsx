@@ -24,10 +24,15 @@ export function HeaderNav() {
           >
             3-й блок
           </Link>
-          <Link className={`link`} to="/" smooth={true} duration={500}>
+          <Link
+            className={`link`}
+            to="questions_and_answers"
+            smooth={true}
+            duration={3000}
+          >
             Вопросы и ответы
           </Link>
-          <Link className={`link`} to="/" smooth={true} duration={500}>
+          <Link className={`link`} to="form" smooth={true} duration={3000}>
             Форма
           </Link>
         </nav>
