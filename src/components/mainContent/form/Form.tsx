@@ -9,7 +9,6 @@ export default function MyForm() {
   const [phoneError, setPhoneError] = useState(false)
   const [nameValid, setNameValid] = useState(false)
   const [phoneValid, setPhoneValid] = useState(false)
-  //   const [checked, setChecked] = useState(false)
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
@@ -38,8 +37,8 @@ export default function MyForm() {
   return (
     <section className="section__form" id="form">
       <h2 className="block__title">Отправить форму</h2>
-      <form className="myForm">
-        <div className="formFields">
+      <form className="form">
+        <div className="form__fields">
           <CustomTextField
             label="Name"
             value={name}
@@ -59,13 +58,8 @@ export default function MyForm() {
           />
         </div>
         <div className="agree__submit">
-          <div className="form-control">
-            <input
-              type="checkbox"
-              id="agree"
-              // checked={checked}
-              // onChange={(e) => setChecked(e.target.checked)}
-            />
+          <div className="form__control">
+            <input type="checkbox" id="agree" />
             <label htmlFor="agree">Согласен, отказываюсь</label>
           </div>
           <button type="submit">Отправить</button>

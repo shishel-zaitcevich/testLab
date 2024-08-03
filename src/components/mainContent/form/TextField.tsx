@@ -29,9 +29,9 @@ export default function CustomTextField({
   }, [value])
 
   return (
-    <div className="customTextField">
+    <div className="text__field">
       <div
-        className={`input-container ${focused ? 'focused' : ''} ${error ? 'error' : ''} ${filled ? 'filled' : ''}`}
+        className={`input__container ${focused ? 'focused' : ''} ${error ? 'error' : ''} ${filled ? 'filled' : ''}`}
       >
         <input
           type={type}
@@ -41,11 +41,11 @@ export default function CustomTextField({
           onBlur={() => setFocused(false)}
         />
         <label className={value ? 'shrink' : ''}>{label}</label>
-        {valid && <span className="valid-icon">✔</span>}
-        {error && !valid && <span className="invalid-icon">✖</span>}
+        {valid && <span className="valid__icon">✔</span>}
+        {error && !valid && <span className="invalid__icon">✖</span>}
       </div>
       {error && helperText && (
-        <div className="helper-text error">{helperText}</div>
+        <div className="helper__text error">{helperText}</div>
       )}
     </div>
   )

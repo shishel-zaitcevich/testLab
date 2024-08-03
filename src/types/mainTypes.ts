@@ -24,3 +24,12 @@ export interface QuestionsAndAnswersType {
 export interface AccordionUsageProps {
   data: QuestionsAndAnswersType[];
 }
+
+export interface MenuItem {
+  text: string;
+  link: string;
+}
+
+export interface SideBarMenuProps {
+  items: MenuItem[];
+}

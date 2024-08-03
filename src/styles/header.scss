@@ -6,12 +6,15 @@
   @include flex_column;
   align-items: flex-start;
   background-image: url(../assets/images/header_bgi.png);
-  // background-repeat: no-repeat;
-  // background-size: cover;
   max-width: useRem(1920);
   min-width: useRem(320);
   width: 100%;
   height: useRem(960);
+  padding: 0 useRem(16);
+  @media only screen and (min-width: 375px) and (max-width: 768px) {
+    height: useRem(1024);
+    background-image: url(../assets/images/bgi768.png);
+  }
   .header__nav {
     max-width: useRem(1213);
     width: 100%;
@@ -22,6 +25,9 @@
       max-width: useRem(464);
       width: 100%;
       @include flex;
+      @media only screen and (min-width: 375px) and (max-width: 768px) {
+        display: none;
+      }
       .link {
         color: $color_white;
         cursor: pointer;
@@ -52,16 +58,27 @@
     height: useRem(334);
     margin: 0 auto;
     @include flex_column;
+    justify-content: center;
     color: $color_white;
     margin-top: useRem(219);
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+      margin-top: 0;
+      height: 100%;
+    }
     .title {
       text-align: center;
       margin-bottom: useRem(18);
       font-size: useRem(52);
+      @media only screen and (min-width: 375px) and (max-width: 768px) {
+        font-size: useRem(32);
+      }
     }
     .header__text {
       margin-bottom: useRem(92);
       font-size: useRem(18);
+      @media only screen and (min-width: 375px) and (max-width: 768px) {
+        font-size: useRem(16);
+      }
     }
     .header__button {
       width: useRem(251);
@@ -79,4 +96,69 @@
       color: $color_white;
     }
   }
+}
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 36px;
+  top: 36px;
+  @media (min-width: 769px) {
+    display: none;
+  }
+}
+
+.bm-burger-bars {
+  background: #373a47;
+}
+
+.bm-burger-bars-hover {
+  background: #a90000;
+}
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-cross {
+  background: #bdc3c7;
+}
+
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  margin-top: useRem(-40);
+}
+
+.bm-menu {
+  background: $color_white;
+  padding: calculateRem(70) calculateRem(20) 0;
+  font-size: 1.15em;
+}
+
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+.bm-item {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: #d1d1d1;
+  transition: color 0.2s;
+}
+
+.bm-item:hover {
+  color: white;
+}
+
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
 }

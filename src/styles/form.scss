@@ -6,61 +6,60 @@
   padding-top: useRem(80);
 }
 
-.customTextField {
+.text__field {
   flex: 1;
-  height: 64px;
+  height: useRem(64);
 
-  .input-container {
+  .input__container {
     max-width: useRem(384);
     width: 100%;
     position: relative;
-    background-color: #f0f0f0;
-    border: 1px solid transparent;
-    border-radius: 4px;
+    background-color: $bgc;
+    border: useRem(1) solid transparent;
+    border-radius: useRem(4);
     transition:
       background-color 0.3s,
       border 0.3s;
 
     &.focused {
-      background-color: #fff;
-      border: 1px solid gray;
+      background-color: $color_white;
+      border: useRem(1) solid $color_pagination;
     }
 
     &.error {
-      border: 1px solid red;
+      border: useRem(1) solid $color_red;
     }
 
     &.filled {
-      background-color: #fff !important; // Цвет фона, когда поле содержит текст
-      border: 1px solid $input_border_color; // Цвет рамки, когда поле содержит текст
+      background-color: $color_white;
+      border: useRem(1) solid $input_border_color;
     }
 
     input {
       width: useRem(384);
-      // width: 100%;
-      padding: 14px 16px;
-      padding-top: 30px;
-      padding-bottom: 10px;
+      padding: useRem(14) useRem(16);
+      padding-top: useRem(30);
+      padding-bottom: useRem(10);
       border: none;
       background: transparent;
-      font-size: 1.125rem; // 18px
+      font-size: useRem(18);
 
       &:focus {
         outline: none;
       }
 
       &:placeholder-shown + label {
-        font-size: 1.125rem; // 18px
-        top: 14px;
-        left: 16px;
+        font-size: useRem(18);
+        top: useRem(14);
+        left: useRem(16);
       }
     }
 
     label {
       position: absolute;
-      top: 22px;
-      left: 16px;
-      color: gray;
+      top: useRem(22);
+      left: useRem(16);
+      color: $color_light_grey;
       pointer-events: none;
       transition: all 0.3s;
     }
@@ -68,43 +67,43 @@
     input:focus + label,
     &.focused label,
     .shrink {
-      font-size: 0.875rem; // 14px
-      top: 2px;
-      left: 12px;
-      background: #fff;
-      padding: 0 4px;
+      font-size: useRem(14);
+      top: useRem(2);
+      left: useRem(12);
+      background: $color_white;
+      padding: 0 useRem(4);
     }
 
-    .valid-icon {
+    .valid__icon {
       position: absolute;
-      right: 16px;
+      right: useRem(16);
       top: 50%;
       transform: translateY(-50%);
       color: $color_white;
       background-color: $color_green;
-      width: 22px;
-      height: 22px;
+      width: useRem(22);
+      height: useRem(22);
       border-radius: 50%;
-      padding-left: 5px;
+      padding-left: useRem(5);
     }
 
-    .invalid-icon {
+    .invalid__icon {
       position: absolute;
-      right: 16px;
+      right: useRem(16);
       top: 50%;
       transform: translateY(-50%);
       color: $color_white;
       background-color: $color_red;
-      width: 22px;
-      height: 22px;
+      width: useRem(22);
+      height: useRem(22);
       border-radius: 50%;
-      padding-left: 5px;
-      padding-bottom: 4px;
+      padding-left: useRem(5);
+      padding-bottom: useRem(4);
     }
   }
 
-  .helper-text {
-    margin-top: 4px;
+  .helper__text {
+    margin-top: useRem(4);
     font-size: useRem(12);
     color: gray;
 
@@ -114,42 +113,42 @@
   }
 }
 
-.myForm {
+.form {
   display: flex;
   flex-direction: column;
   gap: useRem(32);
-  max-width: 800px;
+  max-width: useRem(800);
   margin: 0 auto;
-  margin-top: 80px;
+  margin-top: useRem(80);
   padding-bottom: useRem(80);
 
-  .formFields {
+  .form__fields {
     display: flex;
     gap: useRem(32);
-    max-width: 800px;
+    max-width: useRem(800);
   }
 
   .agree__submit {
     @include flex;
     justify-content: space-between;
-    max-width: 800px;
+    max-width: useRem(800);
     width: 100%;
 
-    .form-control {
+    .form__control {
       display: flex;
       align-items: flex-start;
-      gap: 1rem;
+      gap: useRem(16);
       max-width: useRem(384);
       width: 100%;
       height: useRem(64);
 
       input[type='checkbox'] {
         cursor: pointer;
-        margin-right: 0.5rem;
-        width: 24px;
-        height: 24px;
-        border: 2px $color_pagination solid; // почему не применяется?
-        border-radius: 4px;
+        margin-right: useRem(8);
+        width: useRem(24);
+        height: useRem(24);
+        border: useRem(2) $color_pagination solid; // почему не применяется?
+        border-radius: useRem(4);
       }
 
       label {
@@ -161,7 +160,7 @@
 
     button {
       background-color: $color_blue;
-      color: white;
+      color: $color_white;
       border: none;
       cursor: pointer;
       transition: background-color 0.3s;

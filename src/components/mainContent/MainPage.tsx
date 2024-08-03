@@ -8,16 +8,20 @@ import { questionsData } from './Q&A/QuestionsData'
 import { Description } from './description/Description'
 import { descriptionData } from './description/descriptionData'
 import Form from './form/Form'
+import { Header } from '../../components/header/Header'
+import { Footer } from '../../components/footer/Footer'
 
 export function MainPage() {
   return (
     <>
+      <Header />
       <HowItWorks data={howItWorksData} />
-      <ThirdBlock />
-      <Feedback />
-      <QuestionsAndAnswers data={questionsData} />
-      <Description data={descriptionData} />
-      <Form />
+      {/* <ThirdBlock /> */}
+      {/* <Feedback /> */}
+      {/* <QuestionsAndAnswers data={questionsData} /> */}
+      {/* <Description data={descriptionData} /> */}
+      {/* <Form /> */}
+      <Footer />
     </>
   )
 }
