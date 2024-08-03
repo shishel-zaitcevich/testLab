@@ -11,9 +11,17 @@
   width: 100%;
   height: useRem(960);
   padding: 0 useRem(16);
-  @media only screen and (min-width: 375px) and (max-width: 768px) {
+  @media only screen and (min-width: 376px) and (max-width: 768px) {
     height: useRem(1024);
     background-image: url(../assets/images/bgi768.png);
+  }
+  @media only screen and (min-width: 375px) and (max-width: 767px) {
+    height: useRem(596);
+    background-image: url(../assets/images/bgi375.png);
+  }
+  @media only screen and (min-width: 320px) and (max-width: 374px) {
+    height: useRem(509);
+    background-image: url(../assets/images/bgi375.png);
   }
   .header__nav {
     max-width: useRem(1213);
@@ -25,7 +33,7 @@
       max-width: useRem(464);
       width: 100%;
       @include flex;
-      @media only screen and (min-width: 375px) and (max-width: 768px) {
+      @media only screen and (min-width: 320px) and (max-width: 768px) {
         display: none;
       }
       .link {
@@ -69,15 +77,21 @@
       text-align: center;
       margin-bottom: useRem(18);
       font-size: useRem(52);
-      @media only screen and (min-width: 375px) and (max-width: 768px) {
+      @media only screen and (min-width: 376px) and (max-width: 768px) {
         font-size: useRem(32);
+      }
+      @media only screen and (min-width: 320px) and (max-width: 375px) {
+        font-size: useRem(24);
       }
     }
     .header__text {
       margin-bottom: useRem(92);
       font-size: useRem(18);
-      @media only screen and (min-width: 375px) and (max-width: 768px) {
+      @media only screen and (min-width: 320px) and (max-width: 768px) {
         font-size: useRem(16);
+        line-height: useRem(28);
+        text-align: center;
+        max-width: useRem(288);
       }
     }
     .header__button {

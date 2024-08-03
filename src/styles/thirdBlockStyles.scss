@@ -5,21 +5,47 @@
 .third-block {
   @include flex;
   padding-bottom: useRem(80);
+  @media only screen and (min-width: 376px) and (max-width: 768px) {
+    @include flex;
+    align-items: flex-start;
+  }
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    @include flex_column;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
   .third-block__content {
     max-width: useRem(592);
     width: 100%;
-    height: useRem(140);
     @include flex_column;
+    align-items: flex-start;
     .third__title {
       font-size: useRem(32);
       text-align: start;
-      margin-left: useRem(-30);
       margin-bottom: useRem(18);
+      @media only screen and (min-width: 320px) and (max-width: 768px) {
+        font-size: useRem(20);
+        padding-top: useRem(15);
+        @media only screen and (min-width: 320px) and (max-width: 375px) {
+          text-align: center;
+        }
+      }
     }
     .third-block__text {
       color: $color_grey;
       font-size: useRem(16);
       line-height: useRem(28);
+      @media only screen and (min-width: 320px) and (max-width: 375px) {
+        text-align: center;
+      }
+    }
+  }
+  .money__img {
+    @media only screen and (min-width: 375px) and (max-width: 768px) {
+      max-width: useRem(342);
+    }
+    @media only screen and (min-width: 320px) and (max-width: 374px) {
+      max-width: useRem(288);
     }
   }
 }

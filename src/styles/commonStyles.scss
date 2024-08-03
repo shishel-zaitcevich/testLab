@@ -26,17 +26,28 @@
   max-width: useRem(1216);
   width: 100%;
   margin: 0 auto;
-  padding: 0 useRem(16);
+  padding-left: useRem(16);
+  padding-right: useRem(16);
   padding-top: useRem(80);
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    padding-top: useRem(56);
+    padding-bottom: useRem(56);
+  }
 }
 
 .block__title {
   text-align: center;
   font-size: useRem(40);
   color: $text_dark_color;
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    font-size: useRem(24);
+  }
 }
 
 .grey__bgc {
   background-color: $bgc;
   padding-bottom: useRem(45);
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    padding-bottom: useRem(0);
+  }
 }

@@ -6,17 +6,38 @@
   @include flex;
   max-width: useRem(1216);
   width: 100%;
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    flex-wrap: wrap;
+  }
   .content_block {
     @include flex_column;
     align-items: flex-start;
     max-width: useRem(250);
     width: 100%;
     margin-top: useRem(61);
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+      width: useRem(342);
+      flex-direction: row;
+      flex-wrap: nowrap;
+      margin-top: useRem(42);
+      max-width: useRem(342);
+      .content__text {
+        @include flex_column;
+        align-items: flex-start;
+        max-width: useRem(270);
+        width: 100%;
+      }
+    }
     .icons {
       max-width: useRem(72);
       width: 100%;
       height: useRem(72);
       margin-bottom: useRem(16);
+      @media only screen and (min-width: 320px) and (max-width: 768px) {
+        max-width: useRem(56);
+        height: useRem(56);
+        margin-right: useRem(16);
+      }
     }
     .recommendations__title {
       color: $text_dark_color;

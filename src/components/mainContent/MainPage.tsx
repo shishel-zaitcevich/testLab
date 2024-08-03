@@ -16,11 +16,11 @@ export function MainPage() {
     <>
       <Header />
       <HowItWorks data={howItWorksData} />
-      {/* <ThirdBlock /> */}
-      {/* <Feedback /> */}
-      {/* <QuestionsAndAnswers data={questionsData} /> */}
-      {/* <Description data={descriptionData} /> */}
-      {/* <Form /> */}
+      <ThirdBlock />
+      <Feedback />
+      <QuestionsAndAnswers data={questionsData} />
+      <Description data={descriptionData} />
+      <Form />
       <Footer />
     </>
   )

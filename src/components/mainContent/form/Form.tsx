@@ -34,17 +34,44 @@ export default function MyForm() {
     }
   }
 
+  const handleSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault()
+
+    const agreeElement = document.getElementById('agree') as HTMLInputElement
+    const formData = {
+      name,
+      phone,
+      agree: agreeElement.checked,
+    }
+    fetch('https://your-server.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data)
+        alert('Form submitted successfully!')
+      })
+      .catch((error) => {
+        console.error('Error:', error)
+        alert('There was an error submitting the form')
+      })
+  }
+
   return (
     <section className="section__form" id="form">
-      <h2 className="block__title">Отправить форму</h2>
-      <form className="form">
+      <h2 className="block__title">Отправь форму</h2>
+      <form className="form" onSubmit={handleSubmit}>
         <div className="form__fields">
           <CustomTextField
             label="Name"
             value={name}
             onChange={handleNameChange}
             error={nameError}
-            helperText="Only letters are allowed."
+            helperText="Можно использовать только буквы"
             valid={nameValid}
           />
           <CustomTextField
@@ -52,7 +79,7 @@ export default function MyForm() {
             value={phone}
             onChange={handlePhoneChange}
             error={phoneError}
-            helperText="Only digits and an optional leading + are allowed."
+            helperText="Можно использовать только + и цифры"
             valid={phoneValid}
             type="tel"
           />

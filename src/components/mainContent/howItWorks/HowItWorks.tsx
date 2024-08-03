@@ -15,10 +15,11 @@ export function HowItWorks({ data }: HowItWorksProps) {
           <React.Fragment key={index}>
             <div className={`content_block`}>
               <img src={list.img} alt="img" className="icons" />
-              <h3 className={`recommendations__title`}>{list.title}</h3>
-              <p className="recommendations__text">{list.text}</p>
+              <div className="content__text">
+                <h3 className={`recommendations__title`}>{list.title}</h3>
+                <p className="recommendations__text">{list.text}</p>
+              </div>
             </div>
-            {/* <div className={`divider`}></div> */}
           </React.Fragment>
         ))}
       </div>

@@ -11,11 +11,12 @@ import '../../../styles/sliderStyles.scss'
 
 SwiperCore.use([Navigation, Pagination])
 
-export function Slider({ sliderData, isMobileScreen }: SliderProps) {
+export function Slider({ sliderData }: SliderProps) {
   const paginationRef = useRef<any>(null)
   const [swiper, setSwiper] = useState<SwiperCore>()
   const [isPrevButtonActive, setPrevButtonActive] = useState(false)
   const [isNextButtonActive, setNextButtonActive] = useState(true)
+  const [isMobileScreen, setIsMobileScreen] = useState(false)
 
   const handleSlideChange = (swiper: any) => {
     setPrevButtonActive(!swiper.isBeginning)
@@ -24,10 +25,10 @@ export function Slider({ sliderData, isMobileScreen }: SliderProps) {
 
   useEffect(() => {
     const prevButton = document.querySelector(
-      '.button-prev',
+      '.button__prev',
     ) as HTMLButtonElement
     const nextButton = document.querySelector(
-      '.button-next',
+      '.button__next',
     ) as HTMLButtonElement
 
     if (prevButton) {
@@ -47,18 +48,28 @@ export function Slider({ sliderData, isMobileScreen }: SliderProps) {
     }
   }, [isPrevButtonActive, isNextButtonActive])
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileScreen(window.innerWidth <= 768)
+    }
+
+    handleResize() // Установите начальное значение
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   return (
     <>
       <div className="block__feedback">
-        <button className="button-prev"></button>
+        <button className="button__prev"></button>
         <Swiper
           onSwiper={setSwiper}
-          slidesPerView={isMobileScreen ? 2 : 3}
           freeMode={isMobileScreen ? true : false}
           grabCursor={isMobileScreen ? false : true}
           navigation={{
-            prevEl: '.button-prev',
-            nextEl: '.button-next',
+            prevEl: '.button__prev',
+            nextEl: '.button__next',
           }}
           pagination={{
             el: paginationRef.current,
@@ -69,6 +80,31 @@ export function Slider({ sliderData, isMobileScreen }: SliderProps) {
           speed={1500}
           slidesPerGroup={1}
           onSlideChange={handleSlideChange}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+              freeMode: true,
+              spaceBetween: 32,
+            },
+
+            420: {
+              slidesPerView: 1,
+              freeMode: true,
+              // spaceBetween: 20,
+            },
+
+            650: {
+              slidesPerView: 2,
+              freeMode: true,
+              spaceBetween: 50,
+            },
+
+            769: {
+              slidesPerView: 3,
+              freeMode: false,
+              // spaceBetween: 30,
+            },
+          }}
           className="swiper"
           spaceBetween={32}
         >
@@ -85,7 +121,7 @@ export function Slider({ sliderData, isMobileScreen }: SliderProps) {
             </SwiperSlide>
           ))}
         </Swiper>
-        <button className="button-next"></button>
+        <button className="button__next"></button>
       </div>
       <div className="swiper-pagination" ref={paginationRef}></div>
     </>

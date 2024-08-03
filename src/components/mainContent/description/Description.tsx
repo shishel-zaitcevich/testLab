@@ -1,6 +1,7 @@
 import { AccordionUsageProps } from 'mainTypes'
 import * as React from 'react'
 import '../../../styles/description.scss'
+import '../../../styles/questionsAndAnswers.scss'
 
 export function Description({ data }: AccordionUsageProps) {
   return (
@@ -10,7 +11,7 @@ export function Description({ data }: AccordionUsageProps) {
           {data.map((list, index) => (
             <React.Fragment key={index}>
               <div className="description">
-                <h3 className={`accordion-summary`}>{list.title}</h3>
+                <h3 className={`description__title`}>{list.title}</h3>
                 <p className="description__text">{list.text}</p>
               </div>
             </React.Fragment>

@@ -8,4 +8,5 @@
   @include flex;
   justify-content: center;
   min-height: useRem(88);
+  border-top: 1px solid $input_border_color;
 }

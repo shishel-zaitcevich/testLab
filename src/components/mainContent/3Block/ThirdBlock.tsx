@@ -17,7 +17,7 @@ export function ThirdBlock() {
           экономить деньги на процентах и штрафах.
         </p>
       </div>
-      <img src={Money} alt="money_img" />
+      <img src={Money} alt="money_img" className="money__img" />
     </section>
   )
 }

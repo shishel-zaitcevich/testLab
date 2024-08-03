@@ -14,6 +14,9 @@
 }
 .sidebar {
   position: relative;
+  @media only screen and (min-width: 769px) {
+    display: none;
+  }
   .logo__icon_group {
     @include flex;
     justify-content: space-between;
@@ -39,6 +42,9 @@
 
   .icon__bars {
     gap: useRem(8);
+    // @media only screen and (min-width: 769px) {
+    //   display: none;
+    // }
   }
 
   .icon__cross {
@@ -97,6 +103,9 @@
     .sidebar__items {
       z-index: 1000;
       width: 50%;
+      @media only screen and (min-width: 320px) and (max-width: 374px) {
+        width: 100%;
+      }
     }
   }
 }
