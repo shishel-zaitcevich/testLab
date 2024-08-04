@@ -3,9 +3,7 @@
       "target": "esnext",
       "module": "esnext",
       "jsx": "react",
-    //   "types": [
-    //     "gsap"
-    //   ],
+ 
       "moduleResolution": "node",
       "baseUrl": "./src",
       "paths": {

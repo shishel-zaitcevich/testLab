@@ -8,6 +8,7 @@
   width: 100%;
   @media only screen and (min-width: 320px) and (max-width: 768px) {
     flex-wrap: wrap;
+    justify-content: center;
   }
   .content_block {
     @include flex_column;

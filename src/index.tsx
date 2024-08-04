@@ -5,11 +5,15 @@ import { StrictMode } from 'react'
 import App from './App'
 
 import './index.scss'
+import { Provider } from 'react-redux'
+import store from '../src/store'
 
 const root = createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </StrictMode>,
 )

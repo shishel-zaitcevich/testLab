@@ -67,7 +67,7 @@ export default function MyForm() {
       <form className="form" onSubmit={handleSubmit}>
         <div className="form__fields">
           <CustomTextField
-            label="Name"
+            label="Имя"
             value={name}
             onChange={handleNameChange}
             error={nameError}
@@ -75,7 +75,7 @@ export default function MyForm() {
             valid={nameValid}
           />
           <CustomTextField
-            label="Phone"
+            label="Телефон"
             value={phone}
             onChange={handlePhoneChange}
             error={phoneError}

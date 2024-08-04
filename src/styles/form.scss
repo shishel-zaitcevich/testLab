@@ -135,18 +135,20 @@
   margin: 0 auto;
   margin-top: useRem(80);
   padding-bottom: useRem(80);
-  @media only screen and (min-width: 320px) and (max-width: 768px) {
+  @media only screen and (min-width: 320px) and (max-width: 820px) {
     margin-top: useRem(56);
     padding-bottom: useRem(56);
     padding-left: useRem(16);
     padding-right: useRem(16);
+    max-width: useRem(352);
   }
 
   .form__fields {
     display: flex;
     gap: useRem(32);
     max-width: useRem(800);
-    @media only screen and (min-width: 320px) and (max-width: 767px) {
+
+    @media only screen and (min-width: 320px) and (max-width: 820px) {
       flex-direction: column;
     }
   }
@@ -156,7 +158,7 @@
     justify-content: space-between;
     max-width: useRem(800);
     width: 100%;
-    @media only screen and (min-width: 320px) and (max-width: 767px) {
+    @media only screen and (min-width: 320px) and (max-width: 820px) {
       flex-direction: column;
     }
 
@@ -198,8 +200,14 @@
       height: useRem(64);
       border-radius: useRem(4);
       font-size: useRem(20);
+      font-weight: 600;
+      &:hover {
+        background-color: $color_white;
+        border: 1px solid $color_pagination;
+        color: $text_dark_color;
+      }
       @media only screen and (min-width: 320px) and (max-width: 768px) {
-        max-width: useRem(352);
+        max-width: 100%;
       }
     }
   }

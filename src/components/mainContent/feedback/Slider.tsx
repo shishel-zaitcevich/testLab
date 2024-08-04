@@ -11,6 +11,10 @@ import 'swiper/scss/pagination'
 import { SlideData, SliderProps } from 'mainTypes'
 
 import '../../../styles/sliderStyles.scss'
+import { useDispatch } from 'react-redux'
+import { AppDispatch, RootState } from '../../../store'
+import { useSelector } from 'react-redux'
+import { setActiveIndex } from '../../../slices/sliderSlice'
 
 SwiperCore.use([Navigation, Pagination])
 
@@ -21,10 +25,10 @@ export function Slider({ sliderData }: SliderProps) {
   const [isNextButtonActive, setNextButtonActive] = useState(true)
   const [isMobileScreen, setIsMobileScreen] = useState(false)
 
-  const handleSlideChange = (swiper: any) => {
-    setPrevButtonActive(!swiper.isBeginning)
-    setNextButtonActive(!swiper.isEnd)
-  }
+  const dispatch = useDispatch<AppDispatch>()
+  const { activeIndex, sliderSlides } = useSelector(
+    (state: RootState) => state.slider,
+  )
 
   useEffect(() => {
     const prevButton = document.querySelector(
@@ -62,6 +66,16 @@ export function Slider({ sliderData }: SliderProps) {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+  const handleSlideChange = (swiper: any) => {
+    setPrevButtonActive(!swiper.isBeginning)
+    setNextButtonActive(!swiper.isEnd)
+  }
+
+  const slidesChangeHandler = (swiper: any) => {
+    dispatch(setActiveIndex(swiper.activeIndex))
+    handleSlideChange(swiper)
+  }
+
   return (
     <>
       <div className="block__feedback">
@@ -78,11 +92,9 @@ export function Slider({ sliderData }: SliderProps) {
             el: paginationRef.current,
             clickable: true,
           }}
-          // loop={true} //если сделать круг бесконечным, то нет смысла дизейблить кнопки-стрелки,
-          // если круг сделать конечным, то только три точки
           speed={1500}
           slidesPerGroup={1}
-          onSlideChange={handleSlideChange}
+          onSlideChange={slidesChangeHandler}
           breakpoints={{
             320: {
               slidesPerView: 1,
@@ -90,7 +102,7 @@ export function Slider({ sliderData }: SliderProps) {
               spaceBetween: 32,
             },
 
-            420: {
+            390: {
               slidesPerView: 1,
               freeMode: true,
             },
