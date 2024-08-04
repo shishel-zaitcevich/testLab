@@ -39,6 +39,7 @@ export default function CustomTextField({
           onChange={onChange}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
+          required
         />
         <label className={value ? 'shrink' : ''}>{label}</label>
         {valid && <span className="valid__icon">✔</span>}

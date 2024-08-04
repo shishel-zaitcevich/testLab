@@ -7,19 +7,6 @@
   min-width: useRem(320);
   margin: 0 auto;
   @include flex;
-  @media only screen and (min-width: 769px) and (max-width: 1200px) {
-    // padding: 0 useRem(20);
-    // padding-top: useRem(40);
-    // max-width: useRem(900);
-    // min-width: useRem(700);
-    // width: 100%;
-  }
-  @media only screen and (min-width: 319px) and (max-width: 768px) {
-    // padding: useRem(0) useRem(20);
-    // padding-bottom: useRem(0);
-    // max-width: useRem(700);
-    // width: 100%;
-  }
 }
 
 .block {

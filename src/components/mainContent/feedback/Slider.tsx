@@ -1,12 +1,15 @@
 import * as React from 'react'
 import { useEffect, useRef, useState } from 'react'
+
 import { Navigation, Pagination } from 'swiper/modules'
 import SwiperCore from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
+
 import { SlideData, SliderProps } from 'mainTypes'
+
 import '../../../styles/sliderStyles.scss'
 
 SwiperCore.use([Navigation, Pagination])
@@ -53,7 +56,7 @@ export function Slider({ sliderData }: SliderProps) {
       setIsMobileScreen(window.innerWidth <= 768)
     }
 
-    handleResize() // Установите начальное значение
+    handleResize()
 
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
@@ -90,7 +93,6 @@ export function Slider({ sliderData }: SliderProps) {
             420: {
               slidesPerView: 1,
               freeMode: true,
-              // spaceBetween: 20,
             },
 
             650: {
@@ -102,7 +104,6 @@ export function Slider({ sliderData }: SliderProps) {
             769: {
               slidesPerView: 3,
               freeMode: false,
-              // spaceBetween: 30,
             },
           }}
           className="swiper"

@@ -43,7 +43,7 @@ export default function MyForm() {
       phone,
       agree: agreeElement.checked,
     }
-    fetch('https://your-server.com/submit', {
+    fetch('https://some-server.com/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

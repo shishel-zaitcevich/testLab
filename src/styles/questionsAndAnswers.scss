@@ -21,7 +21,6 @@
 .questions {
   .divider {
     @media only screen and (max-width: 768px) {
-      // padding-top: useRem(16);
       margin-bottom: useRem(16);
     }
   }
@@ -40,11 +39,9 @@
     color: $color_blue;
   }
   @media only screen and (max-width: 768px) {
-    // align-items: flex-start !important;
     &:hover {
       color: $text_dark_color;
     }
-    // padding-top: useRem(16) !important;
   }
   .MuiAccordionSummary-content {
     @include flex;
@@ -70,23 +67,13 @@
 .accordion-icon {
   transition: transform 0.3s;
   @media only screen and (min-width: 320px) and (max-width: 768px) {
-    // margin-top: useRem(20);
   }
 }
 
 .MuiAccordionSummary-expandIconWrapper.Mui-expanded .accordion-icon {
   transform: rotate(45deg);
-  // margin-top: useRem(20);
 }
 
 .Mui-expanded {
   margin-top: 0 !important;
 }
-
-// .MuiPaper-root {
-//   @media only screen and (min-width: 319px) and (max-width: 767px) {
-//     width: 100%;
-//     @include flex;
-//     align-items: flex-start;
-//   }
-// }
