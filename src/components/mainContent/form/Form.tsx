@@ -2,7 +2,7 @@ import * as React from 'react'
 import CustomTextField from './TextField'
 import { useState } from 'react'
 
-export default function MyForm() {
+export default function Form() {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [nameError, setNameError] = useState(false)

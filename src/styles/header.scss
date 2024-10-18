@@ -11,6 +11,7 @@
   width: 100%;
   height: useRem(960);
   padding: 0 useRem(16);
+  margin: 0 auto;
   @media only screen and (min-width: 376px) and (max-width: 768px) {
     height: useRem(1024);
     background-image: url(../assets/images/bgi768.png);
